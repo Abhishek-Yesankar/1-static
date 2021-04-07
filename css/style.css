@@ -939,6 +939,11 @@ video {
 	padding-right: 0.25rem;
 }
 
+.py-8 {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
 .pt-10 {
 	padding-top: 2.5rem;
 }
@@ -1077,6 +1082,10 @@ video {
 .hover\:bg-gray-200:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
+}
+.hover\:bg-indigo-800:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(55, 48, 163, var(--tw-bg-opacity));
 }
 .hover\:text-gray-900:hover {
 	--tw-text-opacity: 1;
