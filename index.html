@@ -34,29 +34,31 @@
                         clip-rule="evenodd" />
                 </svg>
             </button>
-            <div class="hidden md:hidden absolute right-2 shadow-md top-0 z-10 rounded bg-white w-[95%] pb-4"
+            <div class="hidden md:hidden absolute top-0 right-0 z-10 w-full px-2 opacity-0 transition-all duration-150 ease-in"
                 data-nav="nav">
-                <div class="flex justify-between py-4 px-2 mb-4">
-                    <a class="w-8 md:w-12 -ml-0.5" href="#"><img src="./images/workflow-mark-indigo-600.svg" /></a>
-                    <button class="focus-within:outline-none" data-btnClose="closeBtn">
-                        <svg xmlns="http://www.w3.org/2000/svg"
-                            class="h-8 w-10 p-1 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
+                <div class="bg-white shadow-md rounded pb-4">
+                    <div class="flex justify-between py-4 px-2.5 mb-4">
+                        <a class="w-8 md:w-12 -ml-0.5" href="#"><img src="./images/workflow-mark-indigo-600.svg" /></a>
+                        <button class="focus-within:outline-none" data-btnClose="closeBtn">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                class="h-8 w-10 p-1 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <ul class="list-none text-gray-700">
+                        <li class="mb-2 mx-2 hover:text-gray-800 hover:bg-gray-100 p-1"><a href="#">Product</a></li>
+                        <li class="mb-2 mx-2 hover:text-gray-800 hover:bg-gray-100 p-1"><a href="#">Feature</a></li>
+                        <li class="mb-2 mx-2 hover:text-gray-800 hover:bg-gray-100 p-1"><a href="#">Marketplace</a></li>
+                        <li class="mb-2 mx-2 hover:text-gray-800 hover:bg-gray-100 p-1"><a href="#">Company</a></li>
+                        <li
+                            class="mb-2 mx-2 text-center font-medium text-indigo-800 hover:text-indigo-600 hover:bg-gray-100 p-1">
+                            <a href="#">Login</a>
+                        </li>
+                    </ul>
                 </div>
-                <ul class="list-none text-gray-700">
-                    <li class="mb-2 mx-2 hover:text-gray-800 hover:bg-gray-100 p-1"><a href="#">Product</a></li>
-                    <li class="mb-2 mx-2 hover:text-gray-800 hover:bg-gray-100 p-1"><a href="#">Feature</a></li>
-                    <li class="mb-2 mx-2 hover:text-gray-800 hover:bg-gray-100 p-1"><a href="#">Marketplace</a></li>
-                    <li class="mb-2 mx-2 hover:text-gray-800 hover:bg-gray-100 p-1"><a href="#">Company</a></li>
-                    <li
-                        class="mb-2 mx-2 text-center font-medium text-indigo-800 hover:text-indigo-600 hover:bg-gray-100 p-1">
-                        <a href="#">Login</a>
-                    </li>
-                </ul>
             </div>
         </nav>
         <div class="flex h-auto lg:h-[87.1vh] flex-wrap items-center">
