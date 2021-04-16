@@ -14,69 +14,70 @@
 </head>
 
 <body>
-    <section class="max-w-screen-2xl mx-auto">
-        <nav class="flex justify-between md:justify-start py-4 px-4 md:py-8 md:px-12 relative mx-auto">
-            <a class="w-8 md:w-12 mr-6" href="#"><img src="./images/workflow-mark-indigo-600.svg" /></a>
-            <div class="text-base lg:text-lg hidden md:inline-block">
-                <a class="text-gray-500 hover:text-gray-900 font-normal mr-8 align-middle cursor-pointer">Product</a>
-                <a class="text-gray-500 hover:text-gray-900 font-normal mr-8 align-middle cursor-pointer">Feature</a>
-                <a
-                    class="text-gray-500 hover:text-gray-900 font-normal mr-8 align-middle cursor-pointer">Marketplace</a>
-                <a class="text-gray-500 hover:text-gray-900 font-normal mr-8 align-middle cursor-pointer">Company</a>
-                <a href="./login.html" class="text-indigo-800 hover:text-indigo-600 font-normal align-middle cursor-pointer">Log in</a>
-            </div>
-            <button class="md:hidden focus-within:outline-none" data-btnOpen="navBtn" class="">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                    class="h-8 w-10 p-1 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded" viewBox="0 0 20 20"
-                    fill="currentColor">
-                    <path fill-rule="evenodd"
-                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                        clip-rule="evenodd" />
-                </svg>
-            </button>
-            <div class="hidden md:hidden absolute top-0 right-0 z-10 w-full px-2 opacity-0 transition-all duration-150 ease-in"
-                data-nav="nav">
-                <div class="bg-white shadow-md rounded pb-4">
-                    <div class="flex justify-between py-4 px-2.5 mb-4">
-                        <a class="w-8 md:w-12 -ml-0.5" href="#"><img src="./images/workflow-mark-indigo-600.svg" /></a>
-                        <button class="focus-within:outline-none" data-btnClose="closeBtn">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="h-8 w-10 p-1 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                    </div>
-                    <ul class="list-none text-gray-700">
-                        <li class="mb-2 mx-2 hover:text-gray-800 hover:bg-gray-100 p-1"><a href="#">Product</a></li>
-                        <li class="mb-2 mx-2 hover:text-gray-800 hover:bg-gray-100 p-1"><a href="#">Feature</a></li>
-                        <li class="mb-2 mx-2 hover:text-gray-800 hover:bg-gray-100 p-1"><a href="#">Marketplace</a></li>
-                        <li class="mb-2 mx-2 hover:text-gray-800 hover:bg-gray-100 p-1"><a href="#">Company</a></li>
-                        <li
-                            class="mb-2 mx-2 text-center font-medium text-indigo-800 hover:text-indigo-600 hover:bg-gray-100 p-1">
-                            <a href="./login.html">Login</a>
-                        </li>
-                    </ul>
+    <nav class="flex justify-between md:justify-start py-4 px-4 md:py-8 md:px-12 relative mx-auto max-w-screen-2xl">
+        <a class="w-8 md:w-12 mr-6" href="#"><img src="./images/workflow-mark-indigo-600.svg" /></a>
+        <div class="text-base lg:text-lg hidden md:flex items-center">
+            <a class="text-gray-500 hover:text-gray-900 font-normal mr-8 align-middle cursor-pointer" href="#feature" data-scroll-to-feature="feature">Feature</a>
+            <a class="text-gray-500 hover:text-gray-900 font-normal mr-8 align-middle cursor-pointer" href="#pricing" data-scroll-to-pricing="pricing">Pricing</a>
+            <a class="text-gray-500 hover:text-gray-900 font-normal mr-8 align-middle cursor-pointer">Marketplace</a>
+            <a class="text-gray-500 hover:text-gray-900 font-normal mr-8 align-middle cursor-pointer">Company</a>
+            <a href="./login.html" class="text-indigo-800 hover:text-indigo-600 font-normal align-middle cursor-pointer">Log in</a>
+        </div>
+        <button class="md:hidden focus-within:outline-none" data-btnOpen="navBtn" class="">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-10 p-1 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded" viewBox="0 0 20 20"
+                fill="currentColor">
+                <path fill-rule="evenodd"
+                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    clip-rule="evenodd" />
+            </svg>
+        </button>
+        <div class="hidden md:hidden absolute top-0 right-0 z-10 w-full px-2 opacity-0 transition-all duration-150 ease-in"
+            data-nav="nav">
+            <div class="bg-white shadow-md rounded pb-4">
+                <div class="flex justify-between py-4 px-2.5 mb-4">
+                    <a class="w-8 md:w-12 -ml-0.5" href="#"><img src="./images/workflow-mark-indigo-600.svg" /></a>
+                    <button class="focus-within:outline-none" data-btnClose="closeBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-8 w-10 p-1 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                 </div>
+                <ul class="list-none text-gray-700">
+                    <li class="mb-2 mx-2 hover:text-gray-800 hover:bg-gray-100 p-1"><a href="#feature" data-scroll-to-feature-m="feature">Feature</a></li>
+                    <li class="mb-2 mx-2 hover:text-gray-800 hover:bg-gray-100 p-1"><a href="#pricing" data-scroll-to-pricing-m="pricing">Pricing</a></li>
+                    <li class="mb-2 mx-2 hover:text-gray-800 hover:bg-gray-100 p-1"><a href="#">Marketplace</a></li>
+                    <li class="mb-2 mx-2 hover:text-gray-800 hover:bg-gray-100 p-1"><a href="#">Company</a></li>
+                    <li
+                        class="mb-2 mx-2 text-center font-medium text-indigo-800 hover:text-indigo-600 hover:bg-gray-100 p-1">
+                        <a href="./login.html">Login</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
+        </div>
+    </nav>
+    <section class="max-w-screen-2xl mx-auto">
         <div class="flex h-auto lg:h-[87.1vh] flex-wrap items-center">
             <div
-                class="py-10 md:py-20 px-4 lg:pt-44 lg:pl-16 w-full lg:w-1/2 lg:h-full inline-block relative flex-shrink-0">
-                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 w-full md:pr-10">
+                class="py-10 md:pt-20 px-4 lg:pt-44 lg:pl-16 w-full lg:w-1/2 lg:h-full inline-block relative">
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 w-full md:pr-10 text-center lg:text-left">
                     Data to enrich your
                     <span class="block text-indigo-700 mt-2">online business</span>
                 </h1>
-                <p class="font-normal text-gray-500 text-base lg:text-xl my-4 w-full md:pr-20">
+                <p class="font-normal text-gray-500 text-base lg:text-xl my-4 w-full md:pr-20 text-center lg:text-left md:w-4/5 lg:w-auto mx-auto">
                     Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
                     lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
                     fugiat aliqua.
                 </p>
-                <a class="px-10 py-4 w-full text-center my-2 md:w-auto bg-indigo-600 hover:bg-indigo-700 text-white rounded inline-block text-base md:text-lg font-medium mx-1"
+                <div class="w-auto flex flex-wrap justify-center lg:justify-start">
+                    <a class="px-10 py-4 w-full text-center my-2 md:w-auto bg-indigo-600 hover:bg-indigo-700 text-white rounded inline-block text-base md:text-lg font-medium mx-1"
                     href="#">Get started</a>
                 <a class="px-10 py-4 w-full text-center my-2 md:w-auto bg-blue-100 hover:bg-blue-200 text-indigo-700 inline-block text-base md:text-lg font-medium rounded mx-1"
                     href="#">Live demo</a>
+                </div>
                 <svg class="hidden lg:block absolute -right-0 inset-y-0 h-full w-40 text-white transform translate-x-1/2"
                     fill="currentColor" preserveAspectRatio="none" viewbox="0 0 100 100">
                     <polygon points="50, 0 100,0 50,100 0, 100"></polygon>
@@ -86,7 +87,7 @@
                 src="./images/photo-1551434678-e076c223a692.webp" />
         </div>
     </section>
-    <section class="px-4 py-6 text-center max-w-screen-2xl mx-auto">
+    <section class="px-4 py-10 text-center max-w-screen-2xl mx-auto" id="feature">
         <div class="w-auto max-w-3xl mx-auto py-12">
             <h2 class="text-base text-indigo-700 text-medium md:font-semibold mb-2">
                 TRANSACTION
@@ -168,6 +169,9 @@
             </div>
         </div>
     </section>
+    <!--
+        Animated subscribe newsletter modal
+    -->
     <section class="max-w-screen-2xl mx-auto">
         <div class="bg-indigo-700 mx-4 py-10 px-4 md:mx-8 md:py-16 md:px-20 rounded-md my-8">
             <h1 class="text-white text-4xl md:text-5xl font-bold mb-6">
@@ -184,7 +188,10 @@
                 up for free</button>
         </div>
     </section>
-    <section class="py-6 px-4 md:py-12 md:px-6 max-w-screen-2xl mx-auto">
+    <!--
+        revel section with animation
+    -->
+    <section class="py-6 px-4 md:py-12 md:px-6 max-w-screen-2xl mx-auto" id="pricing">
         <div class="flex flex-col flex-wrap">
             <h1 class="text-4xl md:text-5xl text-gray-900 font-bold text-center mb-4">Pricing Plans</h1>
             <p class="text-gray-500 text-base md:text-xl text-center mb-6 font-normal">Start building for free, then add
@@ -322,9 +329,31 @@
             </div>
         </div>
     </section>
+    <section class="mx-auto h-auto lg:w-4/5 mb-6 lg:mb-20 py-6 lg:py-20 px-4 bg-white shadow lg:shadow-md rounded-md max-w-screen-2xl">
+      <h1 class="font-bold text-4xl lg:text-5xl text-gray-900 text-center mb-6 px-2">
+          Trusted by developers from over 80 planets
+      </h1>
+      <p class="font-medium text-base md:text-lg text-gray-600 text-center px-2 md:px-12 mb-6">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, aliquam. Corrupti fugit excepturi consectetur iure iste dolores neque tempore eveniet?
+      </p>
+      <div class="flex flex-wrap sm:flex-row justify-center items-center py-6">
+          <h1 class="text-4xl md:text-5xl font-bold text-indigo-600 px-4 mb-4 text-center mx-4 md:mx-10">
+              99.9%<span class="font-medium text-gray-500 text-lg block text-center mt-2">Runtime</span>
+          </h1>
+          <h1 class="text-4xl md:text-5xl font-bold text-indigo-600 px-4 mb-4 text-center mx-4 md:mx-10">
+            47%<span class="font-medium text-gray-500 text-lg block text-center mt-2">Less data</span>
+        </h1>
+        <h1 class="text-4xl md:text-5xl font-bold text-indigo-600 px-4 mb-4 text-center mx-4 md:mx-10">
+            10K+<span class="font-medium text-gray-500 text-lg block text-center mt-2">Customers</span>
+        </h1>
+      </div>
+    </section>
+    <!-- 
+        Companys logo here like show off you're clients
+    --> 
     <footer
-        class="max-w-screen-2xl mx-auto flex flex-wrap justify-between md:justify-start lg:justify-between px-4 md:px-6 py-10 border-t-2 border-gray-200 mt-2">
-        <div class="w-96 m-2 md:m-4 md:mx-8">
+        class="max-w-screen-2xl m-2 md:m-4 md:mx-8 h-auto mx-auto flex flex-wrap justify-between md:justify-start lg:justify-between px-4 md:px-6 py-10 border-t-2 border-gray-200 mt-10">
+        <div class="w-96 mx-3 sm:mx-8 md:mx-3">
             <a class="w-12 mr-6 inline-block mb-6" href="#"><img class="w-full"
                     src="./images/workflow-mark-indigo-600.svg" /></a>
             <p class="text-gray-700 font-normal text-lg mb-8">Making the world place through constructing
