@@ -1,8 +1,6 @@
 const openBtn = document.querySelector('button[data-btnOpen]'), closeBtn = document.querySelector('button[data-btnClose]'), 
- nav = document.querySelector('div[data-nav]'), scrollToFeatureBtn = document.querySelector('a[data-scroll-to-feature]'),
- scrollToFeatureBtnM = document.querySelector('a[data-scroll-to-feature-m]'),scrollToPricingBtnM = document.querySelector('a[data-scroll-to-pricing-m]')
- toScrollFeature = document.querySelector('#feature'), scrollToPricingBtn = document.querySelector('a[data-scroll-to-pricing]'),
- toScrollPricing = document.querySelector('#pricing');
+ nav = document.querySelector('div[data-nav]'), scrollContainer = document.querySelector('div[data-scroll-container]'),
+ scrollContainerM = document.querySelector('div[data-scroll-container-m]');
 closeBtn.addEventListener('click', function()  {
     nav.style.opacity = 0;
     setTimeout(function()  {
@@ -15,18 +13,26 @@ openBtn.addEventListener('click', function() {
         nav.style.opacity = 100;
     }, 20)
 });
-///smooth scrolling function
-function smoothScroll(toScroll, event)  {
-  event.preventDefault();
-  let cord = toScroll.getBoundingClientRect();
-  window.scrollTo({
-      left: cord.left + window.pageXOffset,
-      top: cord.top + window.pageYOffset,
-      behavior: 'smooth',
-  })
+/////bubbling smooth scroll function
+function smoothScroll(e)  {
+    e.preventDefault();
+    let id = e.target.getAttribute('href');
+    if(id) {
+        let toScroll = document.querySelector(id);
+        let cord = toScroll.getBoundingClientRect();
+        window.scrollTo({
+            left: cord.left,
+            top: cord.top,
+            behavior: 'smooth',
+        })
+    }
 }
-///smooth scrolling events
-scrollToFeatureBtn.addEventListener('click', smoothScroll.bind(null,toScrollFeature));
-scrollToPricingBtn.addEventListener('click', smoothScroll.bind(null,toScrollPricing));
-scrollToFeatureBtnM.addEventListener('click', smoothScroll.bind(null,toScrollFeature));
-scrollToPricingBtnM.addEventListener('click', smoothScroll.bind(null,toScrollPricing));
+scrollContainer.addEventListener('click', smoothScroll);
+scrollContainerM.addEventListener('click', smoothScroll);
+//////copy nav link items to mobile nav 
+let navList = Array.from(scrollContainer.children);
+navList.forEach(element => {
+    let clone = element.cloneNode(true);
+    clone.className = 'py-1 px-2 text-gray-700 hover:text-gray-900 font-normal text-lg';
+    scrollContainerM.appendChild(clone)
+});
