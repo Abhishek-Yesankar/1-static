@@ -15,9 +15,9 @@ openBtn.addEventListener('click', function() {
 });
 /////bubbling smooth scroll function
 function smoothScroll(e)  {
-    e.preventDefault();
     let id = e.target.getAttribute('href');
-    if(id) {
+    if(id && id.startsWith('#')) {
+        e.preventDefault();
         let toScroll = document.querySelector(id);
         let cord = toScroll.getBoundingClientRect();
         window.scrollTo({
