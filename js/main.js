@@ -53,7 +53,7 @@ const observeNav = new IntersectionObserver((entries, observer) => {
    if( !entry.isIntersecting ) {
      navBar.classList.remove('md:py-8');
      navBar.classList.add('fixed', 'top-0', 'border-b', 'border-gray-200', 'md:py-4');
-     sectionFirst.style.marginTop = navBar.clientHeight + 'px';
+     sectionFirst.style.marginTop = navBar.getBoundingClientRect().height + 'px';
     } else if(entry.isIntersecting) {
      navBar.classList.add('md:py-8');
      navBar.classList.remove('fixed', 'top-0', 'border-b', 'border-gray-200', 'md:py-4');
@@ -82,16 +82,20 @@ function countAnimation(select, start, end, delay = 10, suffix)  {
     }, delay )
 }
 let currentThreshold =  document.body.clientWidth > 450  ?  0.6 : 0.3;
-countDownSection.classList.add('translate-y-32','opacity-0');
+
 const countIntersection = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
      if( entry.isIntersecting )  {
-        countDownSection.classList.remove('translate-y-32', 'opacity-0');
-        countDownSection.classList.add('translate-y-0', 'opacity-100');
-        countAnimation(runtime, 0, 99, 10, '%');
-        countAnimation(data, 0, 47, 30, '%');
-        countAnimation(customer, 0, 10, 150, 'K+');
-        countIntersection.unobserve(entry.target);
+         setTimeout(() => {
+            countDownSection.classList.remove('translate-y-32', 'opacity-0');
+            countDownSection.classList.add('translate-y-0', 'opacity-100');
+            countAnimation(runtime, 0, 99, 10, '%');
+            countAnimation(data, 0, 47, 30, '%');
+            countAnimation(customer, 0, 10, 150, 'K+');
+            countIntersection.unobserve(entry.target);
+         },300)
+     } else {
+        countDownSection.classList.add('translate-y-32','opacity-0');
      }
     })
  }, 
