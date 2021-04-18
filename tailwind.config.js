@@ -2,7 +2,7 @@ module.exports = {
   mode: 'jit',
   purge: [
     './*.html',
-    './js/.*js'
+    './js/*',
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {

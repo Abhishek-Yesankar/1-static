@@ -15,15 +15,18 @@
 </head>
 
 <body>
-    <nav class="flex justify-between md:justify-start py-4 px-4 md:py-8 md:px-12 relative mx-auto max-w-screen-2xl">
+    <nav
+        class="flex justify-between md:justify-start py-4 px-4 md:py-8 md:px-12 bg-white  w-full mx-auto max-w-screen-2xl transition-all z-50">
         <a class="w-8 md:w-12 mr-6" href=""><img src="./images/workflow-mark-indigo-600.svg" /></a>
-        <div class="text-base lg:text-lg hidden md:flex items-center" data-scroll-container="">
+        <div class="text-base lg:text-lg hidden md:flex items-center" data-scrollToList="">
             <a class="text-gray-500 hover:text-gray-900 font-normal mr-8 align-middle cursor-pointer"
                 href="#feature">Feature</a>
             <a class="text-gray-500 hover:text-gray-900 font-normal mr-8 align-middle cursor-pointer"
                 href="#pricing">Pricing</a>
-            <a class="text-gray-500 hover:text-gray-900 font-normal mr-8 align-middle cursor-pointer" href="">Marketplace</a>
-            <a class="text-gray-500 hover:text-gray-900 font-normal mr-8 align-middle cursor-pointer" href="#">Company</a>
+            <a class="text-gray-500 hover:text-gray-900 font-normal mr-8 align-middle cursor-pointer"
+                href="#">Marketplace</a>
+            <a class="text-gray-500 hover:text-gray-900 font-normal mr-8 align-middle cursor-pointer"
+                href="#">Company</a>
             <a href="./login.html"
                 class="text-indigo-800 hover:text-indigo-600 font-normal align-middle cursor-pointer">Log in</a>
         </div>
@@ -50,13 +53,13 @@
                         </svg>
                     </button>
                 </div>
-                <div class="flex flex-col text-gray-700" data-scroll-container-m=""></div>
+                <div class="flex flex-col text-gray-700" data-scrollToList-sm=""></div>
             </div>
         </div>
     </nav>
-    <section class="max-w-screen-2xl mx-auto">
-        <div class="flex h-auto lg:h-[87.1vh] flex-wrap items-center">
-            <div class="py-10 md:pt-20 px-4 lg:pt-44 lg:pl-16 w-full lg:w-1/2 lg:h-full inline-block relative">
+    <section class="max-w-screen-2xl mx-auto" id="section-1">
+        <div class="flex h-auto lg:h-full flex-wrap items-center">
+            <div class="w-full lg:w-1/2 lg:h-full lg:m-auto p-4 md:py-8 lg:px-6">
                 <h1
                     class="text-5xl md:text-6xl font-bold text-gray-900 w-full md:pr-10 text-center lg:text-left md:w-4/5 mx-auto lg:w-auto">
                     Data to enrich your
@@ -74,16 +77,17 @@
                     <a class="px-10 py-4 w-full text-center my-2 md:w-auto bg-blue-100 hover:bg-blue-200 text-indigo-700 inline-block text-base md:text-lg font-medium rounded mx-1"
                         href="#">Live demo</a>
                 </div>
-                <svg class="hidden lg:block absolute -right-0 inset-y-0 h-full w-40 text-white transform translate-x-1/2"
+            </div>
+            <div class="w-full lg:w-1/2 inline-block h-96 lg:h-[680px] relative">
+                <img class="h-full object-cover w-full" src="./images/photo-1551434678-e076c223a692.webp" />
+                <svg class="hidden lg:block absolute -left-40 top-0 h-full w-40 text-white transform translate-x-1/2"
                     fill="currentColor" preserveAspectRatio="none" viewbox="0 0 100 100">
                     <polygon points="50, 0 100,0 50,100 0, 100"></polygon>
                 </svg>
             </div>
-            <img class="w-full lg:w-1/2 inline-block h-96 lg:h-full object-cover flex-shrink"
-                src="./images/photo-1551434678-e076c223a692.webp" />
         </div>
     </section>
-    <section class="px-4 py-10 text-center max-w-screen-2xl mx-auto" id="feature">
+    <section class="px-4 pb-10 pt-20 text-center max-w-screen-2xl mx-auto" id="feature">
         <div class="w-auto max-w-3xl mx-auto py-12">
             <h2 class="text-base text-indigo-700 text-medium md:font-semibold mb-2">
                 TRANSACTION
@@ -376,7 +380,7 @@
         </div>
     </section>
     <section
-        class="mx-auto h-auto lg:w-4/5 mb-6 lg:mb-20 py-6 lg:py-20 px-4 bg-white shadow lg:shadow-md rounded-md max-w-screen-2xl">
+        class="mx-auto h-auto lg:w-4/5 mb-6 lg:mb-20 py-6 lg:py-20 px-4 bg-white shadow lg:shadow-md rounded-md max-w-screen-2xl transform transition-all duration-700" id="countdown">
         <h1 class="font-bold text-4xl lg:text-5xl text-gray-900 text-center mb-6 px-2">
             Trusted by developers from over 80 planets
         </h1>
@@ -385,16 +389,28 @@
             Corrupti fugit excepturi consectetur iure iste dolores neque tempore
             eveniet?
         </p>
-        <div class="flex flex-wrap sm:flex-row justify-center items-center py-6">
-            <h1 class="text-4xl md:text-5xl font-bold text-indigo-600 px-4 mb-4 text-center mx-4 md:mx-10">
-                99.9%<span class="font-medium text-gray-500 text-lg block text-center mt-2">Runtime</span>
-            </h1>
-            <h1 class="text-4xl md:text-5xl font-bold text-indigo-600 px-4 mb-4 text-center mx-4 md:mx-10">
-                47%<span class="font-medium text-gray-500 text-lg block text-center mt-2">Less data</span>
-            </h1>
-            <h1 class="text-4xl md:text-5xl font-bold text-indigo-600 px-4 mb-4 text-center mx-4 md:mx-10">
-                10K+<span class="font-medium text-gray-500 text-lg block text-center mt-2">Customers</span>
-            </h1>
+        <div class="flex flex-wrap sm:flex-row justify-center items-center py-6 ">
+            <div class="w-auto">
+                <h1 class="text-4xl md:text-5xl font-bold text-indigo-600 px-4 mb-2 text-center mx-4 md:mx-10"
+                    data-countdown-rn="">
+                    0%
+                </h1>
+                <p class="font-medium text-gray-500 text-lg block text-center mt-2">Runtime</p>
+            </div>
+            <div class="w-auto">
+                <h1 class="text-4xl md:text-5xl font-bold text-indigo-600 px-4 mb-2 text-center mx-4 md:mx-10"
+                    data-countdown-data="">
+                    0%
+                </h1>
+                <p class="font-medium text-gray-500 text-lg block text-center mt-2">Less data</p>
+            </div>
+            <div class="w-auto">
+                <h1 class="text-4xl md:text-5xl font-bold text-indigo-600 px-4 mb-2 text-center mx-4 md:mx-10"
+                    data-countdown-cus="">
+                    0+
+                </h1>
+                <p class="font-medium text-gray-500 text-lg block text-center mt-2">Customers</p>
+            </div>
         </div>
     </section>
     <!-- 
