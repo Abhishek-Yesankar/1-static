@@ -3,12 +3,14 @@ const openBtn = document.querySelector('button[data-btnOpen]'), closeBtn = docum
  toScrollItemsM = document.querySelector('div[data-scrollToList-sm]'), sectionFirst = document.querySelector('#section-1'),
  navBar = document.querySelector('nav'), countDownSection = document.querySelector('#countdown');
 closeBtn.addEventListener('click', function()  {
+    navBar.classList.toggle('border-b');
     nav.style.opacity = 0;
     setTimeout(function()  {
      nav.classList.add('hidden');
     }, 150)
 });
 openBtn.addEventListener('click', function() {
+    navBar.classList.toggle('border-b');
     nav.classList.remove('hidden');
     setTimeout(function()  {
         nav.style.opacity = 100;
@@ -81,19 +83,17 @@ function countAnimation(select, start, end, delay = 10, suffix)  {
      }
     }, delay )
 }
-let currentThreshold =  document.body.clientWidth > 450  ?  0.6 : 0.3;
+let currentThreshold =  document.body.clientWidth > 450  ?  0.5 : 0.3;
 
 const countIntersection = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
      if( entry.isIntersecting )  {
-         setTimeout(() => {
             countDownSection.classList.remove('translate-y-32', 'opacity-0');
             countDownSection.classList.add('translate-y-0', 'opacity-100');
             countAnimation(runtime, 0, 99, 10, '%');
             countAnimation(data, 0, 47, 30, '%');
             countAnimation(customer, 0, 10, 150, 'K+');
             countIntersection.unobserve(entry.target);
-         },300)
      } else {
         countDownSection.classList.add('translate-y-32','opacity-0');
      }
