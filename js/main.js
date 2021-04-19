@@ -3,14 +3,16 @@ const openBtn = document.querySelector('button[data-btnOpen]'), closeBtn = docum
  toScrollItemsM = document.querySelector('div[data-scrollToList-sm]'), sectionFirst = document.querySelector('#section-1'),
  navBar = document.querySelector('nav'), countDownSection = document.querySelector('#countdown');
 closeBtn.addEventListener('click', function()  {
-    navBar.classList.toggle('border-b');
+    navBar.classList.add('border-b');
+    navBar.classList.remove('border-0');
     nav.style.opacity = 0;
     setTimeout(function()  {
      nav.classList.add('hidden');
     }, 150)
 });
 openBtn.addEventListener('click', function() {
-    navBar.classList.toggle('border-b');
+    navBar.classList.remove('border-b');
+    navBar.classList.add('border-0');
     nav.classList.remove('hidden');
     setTimeout(function()  {
         nav.style.opacity = 100;
