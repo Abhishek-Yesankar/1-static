@@ -3,16 +3,20 @@ const openBtn = document.querySelector('button[data-btnOpen]'), closeBtn = docum
  toScrollItemsM = document.querySelector('div[data-scrollToList-sm]'), sectionFirst = document.querySelector('#section-1'),
  navBar = document.querySelector('nav'), countDownSection = document.querySelector('#countdown');
 closeBtn.addEventListener('click', function()  {
-    navBar.classList.add('border-b');
-    navBar.classList.remove('border-0');
+    if( navBar.classList.contains('fixed') )  {
+        navBar.classList.remove('border-0');
+        navBar.classList.add('border-b');
+    }
     nav.style.opacity = 0;
     setTimeout(function()  {
      nav.classList.add('hidden');
     }, 150)
 });
 openBtn.addEventListener('click', function() {
-    navBar.classList.remove('border-b');
-    navBar.classList.add('border-0');
+    if( navBar.classList.contains('fixed') )  {
+        navBar.classList.remove('border-b');
+        navBar.classList.add('border-0');
+    }
     nav.classList.remove('hidden');
     setTimeout(function()  {
         nav.style.opacity = 100;
@@ -39,8 +43,10 @@ function smoothScroll(e)  {
         })
     }
 }
+
 toScrollItems.addEventListener('click', smoothScroll);
 toScrollItemsM.addEventListener('click', smoothScroll);
+
 //////copy nav link items to mobile nav 
 let navList = Array.from(toScrollItems.children);
 navList.forEach(element => {
@@ -52,16 +58,16 @@ navList.forEach(element => {
 
 
 ////////
+navBar.classList.add('absolute', 'top-0', 'left-0');
+document.body.style.marginTop = `${navBar.getBoundingClientRect().height}px`;
 const observeNav = new IntersectionObserver((entries, observer) => {
    entries.forEach((entry) => {
    if( !entry.isIntersecting ) {
-     navBar.classList.remove('md:py-8');
-     navBar.classList.add('fixed', 'top-0', 'border-b', 'border-gray-200', 'md:py-4');
-     sectionFirst.style.marginTop = navBar.getBoundingClientRect().height + 'px';
+     navBar.classList.remove('md:py-8', 'absolute');
+     navBar.classList.add('fixed', 'border-b', 'border-gray-200', 'md:py-4');
     } else if(entry.isIntersecting) {
-     navBar.classList.add('md:py-8');
-     navBar.classList.remove('fixed', 'top-0', 'border-b', 'border-gray-200', 'md:py-4');
-     sectionFirst.style.marginTop = 0;
+     navBar.classList.remove('fixed', 'border-b', 'border-gray-200', 'md:py-4');
+     navBar.classList.add('md:py-8', 'absolute');
     }
    })
 }, 
